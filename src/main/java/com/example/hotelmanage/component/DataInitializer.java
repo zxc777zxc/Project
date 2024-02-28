@@ -12,6 +12,7 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired
     private ClientRepository clientRepository;
 
+
     @Override
     public void run(String... args) throws Exception {
         // Создание и сохранение сущностей Client
