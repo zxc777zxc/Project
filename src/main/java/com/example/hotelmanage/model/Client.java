@@ -4,6 +4,10 @@ import lombok.Data;
 
 import java.util.Scanner;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper=false)
+
 @Data
 public class Client extends Person{
 

@@ -3,6 +3,10 @@ package com.example.hotelmanage.model;
 
 
 import lombok.Data;
+
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper=false)
 @Data
 public class Staff extends Person{
     private String position;
