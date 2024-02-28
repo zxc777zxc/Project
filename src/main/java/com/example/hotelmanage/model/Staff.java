@@ -1,6 +1,7 @@
 package com.example.hotelmanage.model;
 
 
+
 import lombok.Data;
 @Data
 public class Staff extends Person{

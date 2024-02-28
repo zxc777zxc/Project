@@ -4,6 +4,9 @@ package com.example.hotelmanage.model;
 import lombok.Data;
 @Data
 public class Person {
+    public Person() {
+        // конструктор по умолчанию
+    }
     protected String name;
 
     public Person(String name) {
