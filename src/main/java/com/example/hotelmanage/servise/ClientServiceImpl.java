@@ -5,7 +5,8 @@ import com.example.hotelmanage.represetory.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-public class ClientServiceImpl implements ClientService{
+@Service
+public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
 
     @Autowired
@@ -15,6 +16,7 @@ public class ClientServiceImpl implements ClientService{
 
     @Override
     public void addClient(Client client) {
-
+        // Здесь должна быть логика добавления клиента, например:
+        clientRepository.addClient(client);
     }
 }

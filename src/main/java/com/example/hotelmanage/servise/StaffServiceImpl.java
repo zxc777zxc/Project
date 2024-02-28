@@ -4,7 +4,9 @@ import com.example.hotelmanage.model.Staff;
 import com.example.hotelmanage.represetory.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-public class StaffServiceImpl implements StaffService{
+
+@Service
+public class StaffServiceImpl implements StaffService {
     private final StaffRepository staffRepository;
 
     @Autowired
@@ -14,6 +16,7 @@ public class StaffServiceImpl implements StaffService{
 
     @Override
     public void addStaff(Staff staff) {
-
+        // Здесь должна быть логика добавления сотрудника, например:
+        staffRepository.addStaff(staff);
     }
 }
