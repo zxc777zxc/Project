@@ -15,7 +15,7 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Создание и сохранение сущностей Client
-        clientRepository.save(new Client("John Doe", 1));
-        clientRepository.save(new Client("Jane Doe", 2));
+//        clientRepository.save(new Client("John Doe", 1));
+//        clientRepository.save(new Client("Jane Doe", 2));
     }
 }
