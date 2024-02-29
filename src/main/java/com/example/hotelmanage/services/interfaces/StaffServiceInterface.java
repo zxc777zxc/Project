@@ -20,4 +20,6 @@ public interface StaffServiceInterface {
     Staff increaseSalary(int id, double amount);
 
     Staff decreaseSalary(int id, double amount);
+
+    Staff setSalary(int id, double amount);
 }

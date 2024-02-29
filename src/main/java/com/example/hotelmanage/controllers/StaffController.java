@@ -76,6 +76,14 @@ public class StaffController {
         return new ResponseEntity<>(updatedStaff, HttpStatus.OK);
     }
 
+    @PutMapping("/{StaffID}/setSalary/{amount}")
+    public ResponseEntity<Staff> setSalary(@PathVariable("StaffID") int id, @PathVariable("amount") double amount){
+        Staff updatedStaff = serv.setSalary(id, amount);
+        if(updatedStaff == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(updatedStaff, HttpStatus.OK);
+    }
+
 
 
 }
