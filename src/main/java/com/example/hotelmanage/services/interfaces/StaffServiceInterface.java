@@ -14,5 +14,10 @@ public interface StaffServiceInterface {
 
     List<Staff> getByPosition(String position);
 
+    void deleteById(int id);
 
+
+    Staff increaseSalary(int id, double amount);
+
+    Staff decreaseSalary(int id, double amount);
 }

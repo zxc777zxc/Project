@@ -42,5 +42,35 @@ public class StaffService implements StaffServiceInterface{
         return rep.getByPosition(position);
     }
 
+    @Override
+    public void deleteById(int id) {
+        rep.deleteById(id);
+    }
+
+    @Override
+    public Staff increaseSalary(int id, double increaseAmount) {
+        Staff staff = getById(id);
+        if (staff != null) {
+            double currentSalary = staff.getSalary();
+            double newSalary = currentSalary + increaseAmount;
+            staff.setSalary(newSalary);
+            return rep.save(staff);
+        }
+        return null;
+    }
+
+    @Override
+    public Staff decreaseSalary(int id, double decreaseAmount) {
+        Staff staff = getById(id);
+        if (staff != null) {
+            double currentSalary = staff.getSalary();
+            double newSalary = currentSalary - decreaseAmount;
+            staff.setSalary(newSalary);
+            return rep.save(staff);
+        }
+        return null;
+    }
+
+
 
 }

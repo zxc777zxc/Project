@@ -50,5 +50,32 @@ public class StaffController {
     }
 
 
+    @DeleteMapping("delID/{StaffID}")
+    public ResponseEntity<Void> deleteById(@PathVariable("StaffID") int id) {
+        Staff staff = serv.getById(id);
+        if (staff == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        serv.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/{StaffID}/increaseSalary/{amount}")
+    public ResponseEntity<Staff> increaseSalary(@PathVariable("StaffID") int id, @PathVariable("amount") double amount){
+        Staff updatedStaff = serv.increaseSalary(id, amount);
+        if(updatedStaff == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(updatedStaff, HttpStatus.OK);
+    }
+
+    @PutMapping("/{StaffID}/decreaseSalary/{amount}")
+    public ResponseEntity<Staff> decreaseSalary(@PathVariable("StaffID") int id, @PathVariable("amount") double amount){
+        Staff updatedStaff = serv.decreaseSalary(id, amount);
+        if(updatedStaff == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(updatedStaff, HttpStatus.OK);
+    }
+
+
 
 }
